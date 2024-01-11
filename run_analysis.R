@@ -65,3 +65,7 @@ short_combined_df <- short_combined_df  %>%
 mean_df <- short_combined_df %>% 
         group_by(Activity,`Subject ID`) %>%
         summarise(across(all_of(measurements), mean, .names = "mean_{.col}"))
+
+# Write new tidy dataset to main directory
+setwd(current_dir)
+write.table(mean_df,"tidy data")
