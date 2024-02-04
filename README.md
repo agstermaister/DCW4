@@ -15,33 +15,32 @@ output: html_document
 * [Key Concepts from Getting and Cleaning Data](#concepts)
 * [The process](#process)
 
-<h1 id=summary>Problem Summary </h1>
-The  repository includes xx files that can be used to read the data from xx. The xx includes extensive documentation, ranging from code books to user notes and errata. A complete inventory of all available PUMS data is also available on the U.S. Census Bureau website. Additional files in the repository include the README.md and CodeBook.md and images that are referenced within the README.
+<h1 id=summary>Summary </h1>
+The purpose of Getting and Cleaning Data Course Project is to demonstrate one's ability to create a tidy dataset to be used for analysis by collecting and cleaning the provided data sets. 
+The data provided by the course website represent data collected from the accelerometers from Samsung Galaxy S smartphones. A full description is available at the link below:
+
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+ 
+The data provided by the course is available below:
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+The  repository includes xx files that can be used to read and cean the data provided for further analysis. The repository includes the tidy data in txt format, the run_analysis file that includes all the scripts to prepare the data. Additional files in the repository include the README.md and CodeBook.md and images that are referenced within the README.
 
 <h1 id=contents>Repository Contents</h1>
 
 <table>
 <tr><th>File Name</th><th>Description</th></tr>
 <tr><td valign=top>README.md</td><td>Documentation explaining the project and how to use files contained in the repository.</td></tr>
-<tr><td valign=top>read PUMS codebook.R</td><td>R script to read the American Community Survey Public Use Microdata Sample codebook and a single state's data. The codebook is distributed as a Microsoft Excel spreadsheet. The ACS survey data read is the output from the split PUMS person and households.R script. The script uses <code>read.fwf()</code> to read the survey data. </td></tr>
-<tr><td valign=top>read PUMS codebook - readr version.R</td><td>R script to read the American Community Survey Public Use Microdata Sample codebook and a single state's data. The codebook is distributed as a Microsoft Excel spreadsheet. The ACS survey data read is the output from the split PUMS person and households.R script. The script uses Hadley Wickham's <code>readr</code> package <code>read_fwf()</code> function to read the survey data.</td></tr>
-<tr><td valign=top>split PUMS person and households.R</td><td>R script to parse the census file and separate into two files for downstream processing: a person-level file and a household-level file. The script uses <code>readLines()</code> and <code>substr()</code> to split the data into the appropriate output files. </td></tr>
+<tr><td valign=top>run_analysis.R</td><td>R script to read, clean and transform the Human Activity Recognition Using Smartphones data  The scripts used are detailed in [The process](#process) section.</td></tr>
+<tr><td valign=top>tidy data.txt</td><td>Txt file, the data achieved after reading and cleaning and transformation</td></tr>       
 <tr><td valign=top>*.png</td><td>Graphics images to be embedded in the README.md file</td></tr>
-<tr><td valign=top>data/5%_PUMS_record_layout.xls</td><td>Local copy of codebook describing the PUMS data file layout.</td></tr>
+<tr><td valign=top>CodeBook.md</td><td>Local copy of codebook describing the tidy data file layout and the transformations completed.</td></tr>
 </table>
 
 
 
-
-
-| File Name      | Description |
-| :--------      | :---------- |
-| README.md      | Documentation explaining the project and how to use files contained in the repository.            |
-| CodeBook.md    |             |
-| run_analysis.R |             |
-| tidy data.txt  |             |        
-
-<h1 id=concepts>Key Concepts from Getting and Cleaning Data</h1>
+<h1 id=concepts>Key Concepts from Getting and Cleaning Data Course Project</h1>
 The course focused on ... principles that shoudl were employed in the handling of data
 
 
