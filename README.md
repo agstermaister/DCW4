@@ -41,7 +41,22 @@ The  repository includes xx files that can be used to read and cean the data pro
 
 
 <h1 id=concepts>Key Concepts from Getting and Cleaning Data Course Project</h1>
-The course focused on ... principles that shoudl were employed in the handling of data
+
+https://www.coursera.org/learn/data-cleaning/peer/FIZtT/getting-and-cleaning-data-course-project
+
+The requirements of the project are as descibed on the course website:
+* Create a tidy data set  by creating an R script called run_analysis.R that does the following
+<ol>
+ <li> Merges the training and the test sets to create one data set.
+ <li> Extracts only the measurements on the mean and standard deviation for each measurement. 
+ <li> Uses descriptive activity names to name the activities in the data set
+ <li> Appropriately labels the data set with descriptive variable names. 
+ <li> From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+</ol>
+
+* A code book that describes the variables, the data, and any transformations or work that you performed to clean up the data called CodeBook.md.
+ 
+* A README.md in the repo with your scripts. This repo explains how all of the scripts work and how they are connected.
 
 
 <h1 id=process>The Process</h1>
