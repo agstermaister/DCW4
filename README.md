@@ -59,12 +59,13 @@ After loading the dplyer package and imported the files (features.txt, subject_t
 library(dplyr)
 ```
 
-# Import features.txt to use as column headers 
+<h3>  Import features.txt to use as column headers </h3>h3> 
+
 ```{r}
 features <- read.table("features.txt", sep = "\t")
 ```
 
-# Read training and test datasets first chnaging the directory to test sub-folder then from the test folder
+<h3>  Read training and test datasets first chnaging the directory to test sub-folder then from the test folder </h3> 
 
 ```{r}
 current_dir <- getwd()
@@ -73,13 +74,13 @@ training_folder_name <- "train"
 test_path <- file.path(current_dir, test_folder_name )
 ```
 
-# Set the working directory to the "test" folder
+<h3>  Set the working directory to the "test" folder </h3>
 
 ```{r}
 setwd(test_path)
 ```
 
-# Read data from the "test" folder
+<h3>  Read data from the "test" folder </h3>
 
 ```{r}
 test_subject_data <- read.table("subject_test.txt", header = FALSE, sep = "\t")
@@ -87,19 +88,19 @@ test_y_data <- read.table("y_test.txt", sep = "\t")
 test_x_data <- read.table("X_test.txt", sep = "\t")
 ```
 
-# Combine test data 
+<h3>  Combine test data </h3>
 
 ```{r}
 combined_test_data <- cbind(test_subject_data, test_y_data,test_x_data)
 ```
 
-# Switch back to the original working directory
+<h3>  Switch back to the original working directory </h3>
 
 ```{r}
 setwd(current_dir)
 ```
 
-# Set the working directory to the "train" folder
+<h3>  Set the working directory to the "train" folder </h3> 
 
 ```{r}
 trainign_path <- file.path(current_dir, training_folder_name)
@@ -111,14 +112,14 @@ train_x_data <- read.table("X_train.txt", sep = "\t")
 ```
 
 
-# Combine training data 
+<h3>  Combine training data </h3>
 
 ```{r}
 combined_train_data <- cbind(train_subject_data, train_y_data,train_x_data)
 ```
 
 
-# Combine training and test datasets
+<h3>  Combine training and test datasets </h3>
 
 ```{r}
 combined_df <- rbind(combined_test_data, combined_train_data)
@@ -126,7 +127,7 @@ new_col_names <- c("Subject ID", "Activity", "Measures")
 colnames(combined_df) <- new_col_names
 ```
 
-# Remove double space from measure and split on space so eache measurement are in a separate column
+<h3>  Remove double space from measure and split on space so eache measurement are in a separate column </h3>
 
 ```{r}
 combined_df$Measures <- gsub("\\s+", " ", combined_df$Measures)
@@ -135,7 +136,7 @@ combined_df <- cbind(combined_df, split_names)
 ```
 
 
-# Use descriptive activity names to name the activities in the data set
+<h3>  Use descriptive activity names to name the activities in the data set </h3>
 
 ```{r}
 col_names2 <- features$V1
@@ -144,7 +145,7 @@ colnames(combined_df) <- col_names
 ```
 
 
-# Keep only the mean and standard deviation for each measurement
+<h3>  Keep only the mean and standard deviation for each measurement </h3>
 
 ```{r}
 short_combined_df <- combined_df %>%
@@ -152,13 +153,13 @@ short_combined_df <- combined_df %>%
 ```
         
 
-# Label the data set with descriptive variable names
+<h3>  Label the data set with descriptive variable names </h3>
 
 ```{r}
 short_combined_df <- short_combined_df %>% mutate(Activity = ifelse(Activity == 1, "WALKING", ifelse(Activity == 2, "WALKING_UPSTAIRS", ifelse(Activity == 3, "WALKING_DOWNSTAIRS", ifelse(Activity == 4, "SITTING", ifelse(Activity == 5, "STANDING", "LAYING"))))))
 ```
 
-# Create new data set with the average of each variable
+<h3>  Create new data set with the average of each variable </h3> 
 
 ```{r}
 measurements <- colnames(short_combined_df)
@@ -173,7 +174,7 @@ mean_df <- short_combined_df %>%
 
 
 
-# Write new tidy dataset to main directory
+<h3>  Write new tidy dataset to main directory </h3> 
 
 ```{r}
 setwd(current_dir)
