@@ -62,7 +62,8 @@ The requirements of the project are as descibed on the course website:
 <h1 id=process>The Process</h1>
 
 To get the dataframe required i followed the steps below. The order is a bit different then listed on the task. As I found it more practical to add the descriptive variable names before filtering for mean and standard deviation.
-#pic
+
+![Process](https://github.com/agstermaister/Data-Cleaning-Week-4-Assignment/assets/131816758/0ddefaab-25c1-4c82-9751-12d74af17196)
 
 <h2> Getting and combining data </h2>
 After loading the dplyer package and imported the files (features.txt, subject_test.txt,y_test.txt, x_test.txt, subject_train.txt,y_train.txt, x_train.txt) first I combined the train dataset and test data sets separately and then combined the 2 datasests together. 
