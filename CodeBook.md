@@ -25,6 +25,7 @@ The data was downloaded from the Coursera website:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 # Raw data 
+
 The obtained dataset has been randomly divided into two sets, 70%  training data and 30% the test data. 
 The files from the original data were being used for the analysis
 - 'README.txt'
@@ -47,6 +48,14 @@ The files from the original data were being used for the analysis
 
 - 'test/subject_test.txt': Each row identifies the subject who performed the activity for each window sample (Test). Its range is from 1 to 30. 
 
+# Transformations
+
+After reading in both the training and and test data sets (subject_test.txt, y_test.txt, X_test.txt,subject_train.txt,y_train.txt, X_train.txt) first the training sets then the test sets were combined to include the id number, activity and the measurements for each, then the two datasets were combined into one to include botht he training and the test dataset. Column names were added to the data frame for easier understanding then the Measurements column was split to have each measurement in a separate column. the features.txt file was read and the the values were used to give the descriptive names to the columns. A new dataframe was created keeping only the columns that include in hteir column name either the following texts: "Subject ID", "Activity", "mean" and "sdv". The numeric values of the Activity tables were changed to descriptive values according to activity_labels.txt file. All measurement value types were changed to numeric and the final dataset created by creating the average of each variable for each activity and each subject.
+
+# Tidy data
+
+The final data set includes 180 records ( for each activity and participant) and 55 columns inlcudint the activity, particpant number and 53 columns of the average of the mean and and standard deviation measurements for each activity and participant in wide format
+
  
 # The Codebook
 
@@ -56,10 +65,3 @@ Here is the list of variables used in the final data set with the position, data
 ![Codebook](https://github.com/agstermaister/Data-Cleaning-Week-4-Assignment/assets/131816758/cf5bd674-3d24-433a-bca0-01ff64c0ec68)
 
 
-# Transformations
-
-After reading in both the training and and test data sets (subject_test.txt, y_test.txt, X_test.txt,subject_train.txt,y_train.txt, X_train.txt) first the training sets then the test sets were combined to include the id number, activity and the measurements for each, then the two datasets were combined into one to include botht he training and the test dataset. Column names were added to the data frame for easier understanding then the Measurements column was split to have each measurement in a separate column. the features.txt file was read and the the values were used to give the descriptive names to the columns. A new dataframe was created keeping only the columns that include in hteir column name either the following texts: "Subject ID", "Activity", "mean" and "sdv". The numeric values of the Activity tables were changed to descriptive values according to activity_labels.txt file. All measurement value types were changed to numeric and the final dataset created by creating the average of each variable for each activity and each subject.
-
-# Tidy data
-
-The final data set includes 180 records ( for each activity and participant) and 55 columns inlcudint the activity, particpant number and 53 columns of the average of the mean and and standard deviation measurements for each activity and participant in wide format
