@@ -1,7 +1,9 @@
+
 # Load dplyer package
 library(dplyr)
 
-# Import data 
+# Set directory 
+setwd("data")
 features <- read.table("features.txt", sep = "\t")
 
 # Read training and test datasets
@@ -67,5 +69,5 @@ mean_df <- short_combined_df %>%
         summarise(across(all_of(measurements), mean, .names = "mean_{.col}"))
 
 # Write new tidy dataset to main directory
-setwd(current_dir)
-write.table(mean_df,"tidy data")
+setwd("..")
+write.table(mean_df, file = "my_data.txt", sep = "\t")
