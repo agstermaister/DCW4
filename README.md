@@ -25,7 +25,7 @@ The data provided by the course is available below:
 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-The  repository includes xx files that can be used to read and cean the data provided for further analysis. The repository includes the tidy data in txt format, the run_analysis file that includes all the scripts to prepare the data. Additional files in the repository include the README.md and CodeBook.md and images that are referenced within the README.
+The  repository includes 8 files that can be used to read and cean the data provided for further analysis. The repository includes the tidy data in txt format, the run_analysis file that includes all the scripts to prepare the data. Additional files in the repository include the README.md and CodeBook.md and images that are referenced within the README.
 
 <h1 id=contents>Repository Contents</h1>
 
@@ -61,12 +61,12 @@ The requirements of the project are as descibed on the course website:
 
 <h1 id=process>The Process</h1>
 
-To get the dataframe required I followed the steps below. The order is a bit different then listed on the task. As I found it more practical to add the descriptive variable names before filtering for mean and standard deviation.
+To get the dataframe required I followed the steps below. The order is a bit different then listed on the task. I found it more practical to add the descriptive variable names before filtering for mean and standard deviation.
 
 ![Process](https://github.com/agstermaister/Data-Cleaning-Week-4-Assignment/assets/131816758/0ddefaab-25c1-4c82-9751-12d74af17196)
 
 <h2> Getting and combining data </h2>
-After loading the dplyer package and imported the files (features.txt, subject_test.txt,y_test.txt, x_test.txt, subject_train.txt,y_train.txt, x_train.txt) first I combined the training dataset and test data sets separately and then combined the 2 datasests together. 
+After loading the dplyer package and imported the files (features.txt, subject_test.txt,y_test.txt, x_test.txt, subject_train.txt,y_train.txt, x_train.txt) first I combined the training dataset and test data sets separately and then merged the 2 datasests together.  The details of the code and comments are below.
 
 Load dplyer package 
 
@@ -86,7 +86,7 @@ Import features.txt to use as column headers
 features <- read.table("features.txt", sep = "\t")
 ```
 
-Read training and test datasets first chnaging the directory to test sub-folder then from the test folder 
+Read training and test datasets first changing the directory to test sub-folder then from the test folder 
 
 ```{r}
 current_dir <- getwd()
@@ -135,7 +135,7 @@ new_col_names <- c("Subject ID", "Activity", "Measures")
 colnames(combined_df) <- new_col_names
 ```
 
-Remove double space from measure and split on space so eache measurement are in a separate column
+Remove double space from measure and split on space so each measurement is in a separate column
 
 ```{r}
 combined_df$Measures <- gsub("\\s+", " ", combined_df$Measures)
@@ -151,7 +151,7 @@ col_names <- c(new_col_names,"blank",col_names2)
 colnames(combined_df) <- col_names
 ```
 
-Keep only the mean and standard deviation for each measurement by selecting only the measurement columns that include "mean" or "sdv"
+Keep only the mean and standard deviation for each measurement by selecting only the measurement columns that include "mean" or "sdv" 
 
 ```{r}
 short_combined_df <- combined_df %>%
