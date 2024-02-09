@@ -34,7 +34,7 @@ The  repository includes xx files that can be used to read and cean the data pro
 <tr><td valign=top>README.md</td><td>Documentation explaining the project and how to use files contained in the repository.</td></tr>
 <tr><td valign=top>run_analysis.R</td><td>R script to read, clean and transform the Human Activity Recognition Using Smartphones data  The scripts used are detailed in [The process](#process) section.</td></tr>
 <tr><td valign=top>tidy data.txt</td><td>Txt file, the data achieved after reading and cleaning and transformation</td></tr>       
-<tr><td valign=top>*.png</td><td>Graphics images to be embedded in the README.md file</td></tr>
+<tr><td valign=top>*.png</td><td>Graphics images to be embedded in the README.md and CodeBook.md file</td></tr>
 <tr><td valign=top>CodeBook.md</td><td>Local copy of codebook describing the tidy data file layout and the transformations completed.</td></tr>
 </table>
 
@@ -61,17 +61,23 @@ The requirements of the project are as descibed on the course website:
 
 <h1 id=process>The Process</h1>
 
-To get the dataframe required i followed the steps below. The order is a bit different then listed on the task. As I found it more practical to add the descriptive variable names before filtering for mean and standard deviation.
+To get the dataframe required I followed the steps below. The order is a bit different then listed on the task. As I found it more practical to add the descriptive variable names before filtering for mean and standard deviation.
 
 ![Process](https://github.com/agstermaister/Data-Cleaning-Week-4-Assignment/assets/131816758/0ddefaab-25c1-4c82-9751-12d74af17196)
 
 <h2> Getting and combining data </h2>
-After loading the dplyer package and imported the files (features.txt, subject_test.txt,y_test.txt, x_test.txt, subject_train.txt,y_train.txt, x_train.txt) first I combined the train dataset and test data sets separately and then combined the 2 datasests together. 
+After loading the dplyer package and imported the files (features.txt, subject_test.txt,y_test.txt, x_test.txt, subject_train.txt,y_train.txt, x_train.txt) first I combined the training dataset and test data sets separately and then combined the 2 datasests together. 
 
 Load dplyer package 
 
 ```{r}
 library(dplyr)
+```
+
+Set directory
+
+```{r}
+setwd("data")
 ```
 
 Import features.txt to use as column headers 
@@ -137,7 +143,7 @@ split_names <- do.call(rbind, strsplit(as.character(combined_df$Measures), " "))
 combined_df <- cbind(combined_df, split_names)
 ```
 
-Use descriptive activity names to name the activities in the data set
+Label the data set with descriptive variable names
 
 ```{r}
 col_names2 <- features$V1
@@ -145,21 +151,21 @@ col_names <- c(new_col_names,"blank",col_names2)
 colnames(combined_df) <- col_names
 ```
 
-Keep only the mean and standard deviation for each measurement
+Keep only the mean and standard deviation for each measurement by selecting only the measurement columns that include "mean" or "sdv"
 
 ```{r}
 short_combined_df <- combined_df %>%
         select(matches("Subject ID|Activity|mean|sdv"))
 ```
         
+Use descriptive activity names to name the activities in the data set
 
-Label the data set with descriptive variable names
 
 ```{r}
 short_combined_df <- short_combined_df %>% mutate(Activity = ifelse(Activity == 1, "WALKING", ifelse(Activity == 2, "WALKING_UPSTAIRS", ifelse(Activity == 3, "WALKING_DOWNSTAIRS", ifelse(Activity == 4, "SITTING", ifelse(Activity == 5, "STANDING", "LAYING"))))))
 ```
 
-Create new data set with the average of each variable 
+Create new data set with the average of each variable grouped by activity and subject ID
 
 ```{r}
 measurements <- colnames(short_combined_df)
@@ -176,6 +182,6 @@ mean_df <- short_combined_df %>%
 Write new tidy dataset to main directory 
 
 ```{r}
-setwd(current_dir)
-write.table(mean_df,"tidy data")
+setwd("..")
+write.table(mean_df, file = "my_data.txt", sep = "\t")
 ```
