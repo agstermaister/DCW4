@@ -10,7 +10,7 @@ date: "2024-02-08"
 
 # Background
 
-The data used is data collected from accelerometers from the Samsung Galaxy S smartphone by Human Activity Recognition Using Smartphones project. 
+The data used is data collected from accelerometers from the Samsung Galaxy S smartphone by Human Activity Recognition Using Smartphones project by Smartlab. 
 
 There were 30 volunteers involved (19-48 years old). Each performing six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) whilst wearing a smartphone (Samsung Galaxy S II) on the waist equipped with accelerometer and gyroscope.  They captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded and the data manually labelled. The obtained dataset has been randomly divided into two sets, 70%  training data and 30% the test data. 
 
@@ -26,8 +26,9 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 # Raw data 
 
-The obtained dataset has been randomly divided into two sets, 70%  training data and 30% the test data. 
-The files from the original data were being used for the analysis
+The dataset has been randomly divided into two sets, 70%  training data and 30% the test data. 
+The files from the original data were being used for the analysis are listed below.
+
 - 'README.txt'
 
 - 'features_info.txt': Shows information about the variables used on the feature vector.
@@ -50,11 +51,11 @@ The files from the original data were being used for the analysis
 
 # Transformations
 
-After reading in both the training and and test data sets (subject_test.txt, y_test.txt, X_test.txt,subject_train.txt,y_train.txt, X_train.txt) first the training sets then the test sets were combined to include the id number, activity and the measurements for each, then the two datasets were combined into one to include botht he training and the test dataset. Column names were added to the data frame for easier understanding then the Measurements column was split to have each measurement in a separate column. the features.txt file was read and the the values were used to give the descriptive names to the columns. A new dataframe was created keeping only the columns that include in hteir column name either the following texts: "Subject ID", "Activity", "mean" and "sdv". The numeric values of the Activity tables were changed to descriptive values according to activity_labels.txt file. All measurement value types were changed to numeric and the final dataset created by creating the average of each variable for each activity and each subject.
+After reading in both the training and and test data sets (subject_test.txt, y_test.txt, X_test.txt,subject_train.txt,y_train.txt, X_train.txt), first the training sets then the test sets were combined to include the id number, activity and the measurements for each.  The two merge datasets  then were combined into one to include both he training and the test dataset. Column names were added to the data frame for easier understanding. The  column including the Measurements was split to have each measurement in a separate column. The features.txt file was read and the the values were used to give the descriptive names to the columns. A new dataframe was created keeping only the columns that include in their column name either the following texts: "Subject ID", "Activity", "mean" or "sdv". The numeric values of the Activity tables were changed to descriptive values according to activity_labels.txt file. All measurement value types were changed to numeric and the final dataset created by taking the average of each variable for each activity and each subject.
 
 # Tidy data
 
-The final data set includes 180 records ( for each activity and participant) and 55 columns inlcudint the activity, particpant number and 53 columns of the average of the mean and and standard deviation measurements for each activity and participant in wide format
+The final data set is in wide format and includes 180 records (for each activity and participant) and 55 columns inlcuding the activity, particpant number and 53 columns of the average of the mean and and standard deviation measurements for each activity and participant
 
  
 # The Codebook
