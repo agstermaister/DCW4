@@ -13,7 +13,6 @@ date: "2024-02-08"
 * [Transformations](#transformations)
 * [Tidy data](#tidy)
 * [The Codebook](#codebook)
-* <h1 id=summary>
 
 
 <h1 id=background>Background</h1>
