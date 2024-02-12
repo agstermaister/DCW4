@@ -8,14 +8,14 @@ date: "2024-02-08"
 ---
 
 # Getting and Cleaning Data Course Project Codebook
-* [Background](#background)
+* [Study Design](#design)
 * [Raw data](#raw)
 * [Transformations](#transformations)
 * [Tidy data](#tidy)
 * [The Codebook](#codebook)
 
 
-<h1 id=background>Background</h1>
+<h1 id=design>Study Design</h1>
 
 The data used is data collected from accelerometers from the Samsung Galaxy S smartphone by Human Activity Recognition Using Smartphones project by Smartlab. 
 
