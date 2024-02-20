@@ -19,7 +19,7 @@ date: "2024-02-08"
 
 The data used is data collected from accelerometers from the Samsung Galaxy S smartphone by Human Activity Recognition Using Smartphones project by Smartlab. 
 
-There were 30 volunteers involved (19-48 years old). Each performing six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) whilst wearing a smartphone (Samsung Galaxy S II) on the waist equipped with accelerometer and gyroscope.  They captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded and the data manually labelled. The obtained dataset has been randomly divided into two sets, 70%  training data and 30% the test data. 
+There were 30 volunteers involved (19-48 years old). Each performing six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) whilst wearing a smartphone (Samsung Galaxy S II) on the waist equipped with accelerometer and gyroscope.  They captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded and the data manually labelled. The obtained dataset has been randomly divided into two sets, 70% training data and 30% test data. 
 
 A full description is available at the site where the data was obtained:
 
