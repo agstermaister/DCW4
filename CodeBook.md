@@ -33,8 +33,8 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 <h1 id=raw>Raw data</h1> 
 
-The dataset has been randomly divided into two sets, 70%  training data and 30% the test data. 
-The files from the original data were being used for the analysis are listed below.
+The dataset has been randomly divided into two sets, 70% training data and 30% test data. 
+The files from the original data being used are listed below.
 
 - 'README.txt'
 
