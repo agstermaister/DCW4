@@ -1,10 +1,8 @@
 ### Data-Cleaning-Week-4-Assignment
 ---
 title: "CodeBook"
-
+date: "2024-02-21"
 author: "Agnes Eordogh"
-
-date: "2024-02-08"
 ---
 
 # Getting and Cleaning Data Course Project Codebook
