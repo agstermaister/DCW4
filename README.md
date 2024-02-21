@@ -39,7 +39,7 @@ The  repository includes 8 files that can be used to read and cean the data prov
 <tr><td valign=top>*.png</td><td>Graphics images to be embedded in the README.md and CodeBook.md file</td></tr>
 <tr><td valign=top>CodeBook.md</td><td>Local copy of codebook describing the tidy data file layout and the transformations completed.</td></tr>
 <tr><td valign=top>.gitignore</td><td>File is used to specify intentionally untracked files that Git should ignore.</td></tr>
-<tr><td valign=top>.Data_Cleaning-Week-4-Assignement.Rproj</td><td>R project created for assignement</td></tr>
+<tr><td valign=top>Data_Cleaning-Week-4-Assignement.Rproj</td><td>R project created for assignment</td></tr>
 </table>
 
 
