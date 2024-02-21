@@ -6,9 +6,7 @@ author: "Agnes Eordogh"
 
 date: "2024-02-04"
 
-output: html_document
-
-RStudio 2023.06.1 Build 524
+version: "RStudio 2023.06.1 Build 524"
 
 ---
 # Getting and Cleaning Data Course Project
