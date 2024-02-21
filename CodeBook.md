@@ -71,6 +71,6 @@ The final data set is in wide format and includes 180 records (for each activity
 Here is the list of variables used in the final data set with the position, data type, possible value and a short description.
 
 
-![Codebook](https://github.com/agstermaister/Data-Cleaning-Week-4-Assignment/assets/131816758/cf5bd674-3d24-433a-bca0-01ff64c0ec68Codebook.png)
+![Codebook](https://github.com/agstermaister/Data-Cleaning-Week-4-Assignment/blob/ab684e76480ca5f5889ad17b6ffcce3cdfd28f95/Codebook.png)
 
 
