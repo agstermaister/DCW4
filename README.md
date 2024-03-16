@@ -29,6 +29,7 @@ The  repository includes 8 files that can be used to read and cean the data prov
 
 <h1 id=contents>Repository Contents</h1>
 
+
 <table>
 <tr><th>File Name</th><th>Description</th></tr>
 <tr><td valign=top>README.md</td><td>Documentation explaining the project and how to use files contained in the repository.</td></tr>
@@ -36,9 +37,7 @@ The  repository includes 8 files that can be used to read and cean the data prov
 <tr><td valign=top>tidy data.txt</td><td>Txt file, the data achieved after reading and cleaning and transformation</td></tr>       
 <tr><td valign=top>*.png</td><td>Graphics images to be embedded in the README.md and CodeBook.md file</td></tr>
 <tr><td valign=top>CodeBook.md</td><td>Local copy of codebook describing the tidy data file layout and the transformations completed.</td></tr>
-
-
-
+</table>
 
 <h1 id=concepts>Key Concepts from Getting and Cleaning Data Course Project</h1>
 
