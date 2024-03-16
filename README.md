@@ -13,7 +13,7 @@ version: "RStudio 2023.06.1 Build 524"
 * [Summary](#summary)
 * [Repository Contents](#contents)
 * [Key Concepts from Getting and Cleaning Data](#concepts)
-* [The process](#process)
+* [The Process](#process)
 
 <h1 id=summary>Summary </h1>
 The purpose of Getting and Cleaning Data Course Project is to demonstrate one's ability to create a tidy dataset to be used for analysis by combining and cleaning the provided data sets. 
@@ -33,7 +33,7 @@ The  repository includes 8 files that can be used to read and cean the data prov
 <table>
 <tr><th>File Name</th><th>Description</th></tr>
 <tr><td valign=top>README.md</td><td>Documentation explaining the project and how to use files contained in the repository.</td></tr>
-<tr><td valign=top>run_analysis.R</td><td>R script to read, clean and transform the Human Activity Recognition Using Smartphones data  The scripts used are detailed in [The process](#process) section.</td></tr>
+<tr><td valign=top>run_analysis.R</td><td>R script to read, clean and transform the Human Activity Recognition Using Smartphones data  The scripts used are detailed in [The Process](#process) section.</td></tr>
 <tr><td valign=top>tidy data.txt</td><td>Txt file, the data achieved after reading and cleaning and transformation</td></tr>       
 <tr><td valign=top>*.png</td><td>Graphics images to be embedded in the README.md and CodeBook.md file</td></tr>
 <tr><td valign=top>CodeBook.md</td><td>Local copy of codebook describing the tidy data file layout and the transformations completed.</td></tr>
