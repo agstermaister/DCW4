@@ -71,4 +71,4 @@ mean_df <- short_combined_df %>%
 
 # Write new tidy dataset to main directory
 setwd("..")
-write.table(mean_df, file = "my_data.txt", sep = "\t")
+write.table(mean_df, file = "tidy_data.txt", sep = "\t")
