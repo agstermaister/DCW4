@@ -16,7 +16,7 @@ version: "RStudio 2023.06.1 Build 524"
 * [The process](#process)
 
 <h1 id=summary>Summary </h1>
-The purpose of Getting and Cleaning Data Course Project is to demonstrate one's ability to create a tidy dataset to be used for analysis by collecting and cleaning the provided data sets. 
+The purpose of Getting and Cleaning Data Course Project is to demonstrate one's ability to create a tidy dataset to be used for analysis by combining and cleaning the provided data sets. 
 The data provided by the course website represent data collected from the accelerometers from Samsung Galaxy S smartphones. A full description is available at the link below:
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
