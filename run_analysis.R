@@ -1,9 +1,5 @@
-
 # Load dplyer package
 library(dplyr)
-
-# Set directory 
-setwd("data")
 
 #Import features.txt to use as column headers
 features <- read.table("features.txt", sep = "\t")
