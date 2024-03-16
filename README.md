@@ -66,7 +66,7 @@ To get the dataframe required I followed the steps below. The order is a bit dif
 ![Process](https://github.com/agstermaister/Data-Cleaning-Week-4-Assignment/assets/131816758/0ddefaab-25c1-4c82-9751-12d74af17196)
 
 <h2> Getting and combining data </h2>
-After loading the dplyer package and imported the files (features.txt, subject_test.txt,y_test.txt, x_test.txt, subject_train.txt,y_train.txt, x_train.txt) first I combined the training dataset and test data sets separately and then merged the 2 datasests together.  The details of the code and comments are below.
+After loading the dplyer package and importing the files (features.txt, subject_test.txt,y_test.txt, x_test.txt, subject_train.txt,y_train.txt, x_train.txt) first I combined the training dataset and test data sets separately and then merged the 2 datasests together.  The details of the code and comments are below.
 
 Load dplyer package 
 
@@ -74,11 +74,6 @@ Load dplyer package
 library(dplyr)
 ```
 
-Set directory
-
-```{r}
-setwd("data")
-```
 
 Import features.txt to use as column headers 
 
@@ -86,7 +81,7 @@ Import features.txt to use as column headers
 features <- read.table("features.txt", sep = "\t")
 ```
 
-Read training and test datasets first changing the directory to test sub-folder then from the test folder 
+Read training and test datasets 
 
 ```{r}
 current_dir <- getwd()
@@ -101,19 +96,28 @@ Set the working directory to the "test" folder
 setwd(test_path)
 ```
 
-Read data from the "test" folder and Combine test data 
+Read data from the "test" folder  
 
 ```{r}
 test_subject_data <- read.table("subject_test.txt", header = FALSE, sep = "\t")
 test_y_data <- read.table("y_test.txt", sep = "\t")
 test_x_data <- read.table("X_test.txt", sep = "\t")
+```
+
+# Combine test data 
+
+```{r}
 combined_test_data <- cbind(test_subject_data, test_y_data,test_x_data)
 ```
 
-Switch back to the original working directory  and set the working directory to the "train" folder
+Switch back to the original working directory  
 
 ```{r}
 setwd(current_dir)
+```
+
+Set the working directory to the "train" folder
+```{r}
 trainign_path <- file.path(current_dir, training_folder_name)
 setwd(trainign_path)
 ```
@@ -151,7 +155,7 @@ col_names <- c(new_col_names,"blank",col_names2)
 colnames(combined_df) <- col_names
 ```
 
-Keep only the mean and standard deviation for each measurement by selecting only the measurement columns that include "mean" or "sdv" 
+Keep only the mean and standard deviation for each measurement  
 
 ```{r}
 short_combined_df <- combined_df %>%
@@ -160,12 +164,11 @@ short_combined_df <- combined_df %>%
         
 Use descriptive activity names to name the activities in the data set
 
-
 ```{r}
 short_combined_df <- short_combined_df %>% mutate(Activity = ifelse(Activity == 1, "WALKING", ifelse(Activity == 2, "WALKING_UPSTAIRS", ifelse(Activity == 3, "WALKING_DOWNSTAIRS", ifelse(Activity == 4, "SITTING", ifelse(Activity == 5, "STANDING", "LAYING"))))))
 ```
 
-Create new data set with the average of each variable grouped by activity and subject ID
+Create new data set with the average of each variable 
 
 ```{r}
 measurements <- colnames(short_combined_df)
@@ -183,5 +186,5 @@ Write new tidy dataset to main directory
 
 ```{r}
 setwd("..")
-write.table(mean_df, file = "my_data.txt", sep = "\t")
+write.table(mean_df, file = "tidy_data.txt", sep = "\t")
 ```
